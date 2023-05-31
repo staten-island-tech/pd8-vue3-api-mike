@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NYC Benefits Visualization</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/Chart.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>NYC Benefits Visualization</h1>
+    <div>
+      <label for="benefit">Benefit:</label>
+      <select id="benefit" v-model="selectedBenefit">
+        <option v-for="benefit in benefits" :value="benefit.program_name" :key="benefit.program_name">{{ benefit.program_name }}</option>
+      </select>
+      <button @click="fetchData">Fetch Data</button>
+    </div>
+    <div>
+      <canvas id="chart"></canvas>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
